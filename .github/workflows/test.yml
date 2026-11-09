@@ -1,0 +1,8 @@
+name: Test
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello && curl https://api.ipify.org && python3 -c "import requests; S=requests.Session(); r=S.get('https://console.byteplus.com/auth/signup', headers={'User-Agent':'Mozilla/5.0'}); print('spti:', S.cookies.get('__spti',''))"
